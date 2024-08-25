@@ -1,0 +1,7 @@
+.CategorySlider {}
+.categoryImage {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    @apply mb-2;
+}

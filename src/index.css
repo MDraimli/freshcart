@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    padding-top: 4rem;
+}
+
+.active {
+    @apply text-green-500 underline;
+}
+
+.btn {
+    @apply w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-green-600 shadow-lg focus:outline-none hover:bg-green-700 hover:shadow-none;
+}
+
+.btn[disabled] {
+    @apply bg-gray-400 cursor-not-allowed;
+}
+
+.alert {
+    @apply px-4 py-3 mb-4 border rounded;
+}
+
+.alert-success {
+    @apply text-green-700 bg-green-100 border-green-200;
+}
+
+.alert-error {
+    @apply text-red-700 bg-red-100 border-red-200;
+}
+
+
+.lds-ellipsis,
+.lds-ellipsis div {
+    box-sizing: border-box;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 33.33333px;
+    width: 13.33333px;
+    height: 13.33333px;
+    border-radius: 50%;
+    background: currentColor;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    @apply text-green-500;
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 8px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 8px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 32px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 56px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(24px, 0);
+    }
+}
+
+.loading-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    @apply text-3xl font-bold mb-3;
+}
+
+h2 {
+    @apply text-xl font-semibold mb-2;
+}
+
+.row {
+    @apply flex flex-wrap -mx-4;
+}
