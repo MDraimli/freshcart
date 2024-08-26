@@ -18,6 +18,10 @@ import 'react-toastify/dist/ReactToastify.css';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 import ProductDetails from './components/ProductDetails/ProductDetails';
 import CartContextProvider from './context/cartContext';
+import WishListContextProvider from './context/wishListContext';
+import Checkout from './components/Checkout/Checkout';
+import MyOrders from './components/MyOrders/MyOrders';
+import WishList from './components/WishList/WishList';
 
 function App() {
   const router = createBrowserRouter([
@@ -47,6 +51,18 @@ function App() {
           element: <ProtectedRoute><Categories /></ProtectedRoute>
         },
         {
+          path: "/checkout",
+          element: <ProtectedRoute><Checkout /></ProtectedRoute>
+        },
+        {
+          path: "/allorders",
+          element: <ProtectedRoute><MyOrders /></ProtectedRoute>
+        },
+        {
+          path: "/wishlist",
+          element: <ProtectedRoute><WishList /></ProtectedRoute>
+        },
+        {
           path: "/register",
           element: <Register />
         },
@@ -69,8 +85,10 @@ function App() {
     <>
       <AuthContextProvider>
         <CartContextProvider>
+        <WishListContextProvider>
           <RouterProvider router={router} />
           <ToastContainer />
+        </WishListContextProvider>
         </CartContextProvider>
       </AuthContextProvider>
     </>
